@@ -1,0 +1,28 @@
+<div class="container-products" id="container-products">
+
+    {{#each products.payload}}
+    <div class="contain-product">
+        <div class="product">
+            <div class="contain-title">
+                <p class="product-title">{{this.title}}</p>
+                <p class="product-description">{{this.description}}</p>
+            </div>
+            <div class="contain-price">
+                <p class="product-price">${{this.price}}</p>
+                <p class="product-stock ">unidades: {{this.stock}}</p>
+            </div>
+        </div>
+        <button class="add-cart" name={{this._id}} id="add-cart">Agregar al carrito</button>
+    </div>
+    {{/each}}
+    {{#if products.hasPrevPage}}
+    <a href={{products.prevLink}}>Anterior</a>
+    {{/if}}
+    {{#if products.hasNextPage}}
+    <a href={{products.nextLink}}>Siguiente</a>
+    {{/if}}
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/products.js"></script>
