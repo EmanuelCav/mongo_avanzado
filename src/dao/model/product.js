@@ -38,7 +38,11 @@ const productSchema = new Schema({
     category: {
         type: String,
         required: true
-    }
+    },
+
+    thumbnails: [{
+        type: String
+    }]
 
 }, {
     timestamps: true,

@@ -1,6 +1,6 @@
 const socket = io();
 
-const containerProducts = document.getElementById("container-products")
+const containMessage = document.getElementById("contain-message")
 
 const addCart = document.querySelectorAll("#add-cart")
 
@@ -12,9 +12,13 @@ addCart.forEach((element) => {
     
         socket.emit("addCart", {id: element.getAttribute("name") })
 
+        document.querySelectorAll(".contain-message").forEach((element) => {
+            element.remove()
+        })
+
         const message = document.createElement("p")
-        message.innerHTML += "Producto agregado correctamente"
-        containerProducts.appendChild(message)
+        message.innerText = "Producto agregado correctamente"
+        containMessage.appendChild(message)
     
     })
 

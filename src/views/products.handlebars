@@ -1,3 +1,5 @@
+<div class="contain-message" id="contain-message"></div>
+
 <div class="container-products" id="container-products">
 
     {{#each products.payload}}
@@ -6,6 +8,7 @@
             <div class="contain-title">
                 <p class="product-title">{{this.title}}</p>
                 <p class="product-description">{{this.description}}</p>
+                <img src={{this.thumbnails.[0]}} alt="Imagen">
             </div>
             <div class="contain-price">
                 <p class="product-price">${{this.price}}</p>
